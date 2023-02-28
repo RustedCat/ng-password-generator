@@ -24,7 +24,7 @@ export class AppComponent {
     await navigator.clipboard.writeText(this.password);
 
     clipboardLink.classList.add('text-green-400');
-    clipboardLink.innerText = 'Link copied to the clipboard';
+    clipboardLink.innerText = 'Password copied to the clipboard';
 
     setTimeout(() => {
       clipboardLink.classList.remove('text-green-400');
