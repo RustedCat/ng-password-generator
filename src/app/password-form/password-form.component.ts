@@ -16,7 +16,7 @@ export class PasswordFormComponent {
     hasLowercase: true,
     hasNumbers: true,
     hasSpecial: true,
-    lenght: 16,
+    length: 16,
   };
 
   constructor(private passwordService: PasswordGeneratorService) {}

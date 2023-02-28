@@ -3,5 +3,5 @@ export interface IPassword {
   hasUppercase: boolean;
   hasLowercase: boolean;
   hasSpecial: boolean;
-  lenght: number;
+  length: number;
 }
