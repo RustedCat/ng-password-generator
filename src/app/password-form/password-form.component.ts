@@ -40,11 +40,12 @@ export class PasswordFormComponent {
   }
 
   updateSliderColor() {
-    let color = '-error';
-    if (this.formData.length < 64) color = '-warning';
-    if (this.formData.length < 32) color = '-success';
-    if (this.formData.length < 16) color = '-accent';
-    if (this.formData.length < 8) color = '';
+    let color;
+    if (this.formData.length < 16) color = '';
+    else if (this.formData.length < 33) color = '-accent';
+    else if (this.formData.length < 65) color = '-success';
+    else if (this.formData.length < 97) color = '-warning';
+    else color = '-error';
 
     this.sliderColor = `range range${color}`;
   }
