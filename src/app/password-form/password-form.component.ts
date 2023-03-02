@@ -32,6 +32,15 @@ export class PasswordFormComponent {
 
   noUnselected(element: string, selected: boolean) {
     if (selected) return;
+
+    const atLeastOneSelected =
+      this.formData.hasLowercase ||
+      this.formData.hasUppercase ||
+      this.formData.hasSpecial ||
+      this.formData.hasNumbers;
+
+    if (atLeastOneSelected) return;
+
     if (element == 'u') {
       this.formData.hasLowercase = true;
     } else {
