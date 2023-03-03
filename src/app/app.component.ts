@@ -15,7 +15,7 @@ export class AppComponent {
   password = '';
 
   constructor(private passwordService: PasswordGeneratorService) {
-    passwordService.generatedPassword.subscribe((password) => {
+    passwordService.generatedPassword$.subscribe((password) => {
       this.password = password;
     });
   }

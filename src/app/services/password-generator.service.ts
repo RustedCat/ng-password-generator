@@ -1,11 +1,12 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { IPassword } from '../models/password.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PasswordGeneratorService {
-  generatedPassword: EventEmitter<string> = new EventEmitter();
+  generatedPassword$: Subject<string> = new Subject();
 
   private lower_chars = 'abcdefghijklmnopqrstuvwxyz';
   private upper_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -24,6 +25,6 @@ export class PasswordGeneratorService {
     for (let i = 0; i < requirements.length; ++i)
       password += allowed[Math.floor(Math.random() * allowed.length)];
 
-    this.generatedPassword.emit(password);
+    this.generatedPassword$.next(password);
   }
 }
